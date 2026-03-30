@@ -42,9 +42,6 @@ sales.xlsx
 Duplicate_User_Subscription_IDs.csv
 Pivot_Table_Active_NonISP_P_Connectivity.csv
 
-# Test/Temporary Files
-sales_test.csv
-
 # pytest
 .pytest_cache/
 .coverage
