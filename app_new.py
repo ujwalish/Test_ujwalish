@@ -7,7 +7,7 @@ st.set_page_config(page_title="Sales Dashboard", layout="wide")
 st.title("Sales Performance Dashboard")
 
 # Load data
-df = pd.read_excel("sales.xlsx")
+df = pd.read_csv("sales_test.csv")
 
 # Sidebar filter
 st.sidebar.header("Filters")
