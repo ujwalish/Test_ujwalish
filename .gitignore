@@ -1,0 +1,54 @@
+# Virtual Environment
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Generated Export Files
+*.xlsx
+Active_Region3_Region4_Export.xlsx
+Sector_Analysis_Dashboard.xlsx
+sales.xlsx
+
+# Generated CSV Exports
+Duplicate_User_Subscription_IDs.csv
+Pivot_Table_Active_NonISP_P_Connectivity.csv
+
+# Test/Temporary Files
+sales_test.csv
+
+# pytest
+.pytest_cache/
+.coverage
+
+# Environment
+.env
+.env.local
