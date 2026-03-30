@@ -11,31 +11,31 @@ df = pd.read_csv("sales_test.csv")
 
 # Sidebar filter
 st.sidebar.header("Filters")
-region = st.sidebar.selectbox("Select Region", ["All"] + list(df["Region"].unique()))
+category = st.sidebar.selectbox("Select Category", ["All"] + list(df["Category"].unique()))
 
-if region != "All":
-    df = df[df["Region"] == region]
+if category != "All":
+    df = df[df["Category"] == category]
 
 # KPI Metrics
-total_sales = df["Sales"].sum()
-avg_sales = df["Sales"].mean()
-total_customers = df["Customer"].nunique()
+total_sales = df["Amount"].sum()
+avg_sales = df["Amount"].mean()
+total_products = df["Product"].nunique()
 
 col1, col2, col3 = st.columns(3)
 
-col1.metric("Total Sales", f"{total_sales}")
-col2.metric("Average Sales", f"{avg_sales:.2f}")
-col3.metric("Customers", total_customers)
+col1.metric("Total Sales", f"${total_sales:,.2f}")
+col2.metric("Average Sales", f"${avg_sales:.2f}")
+col3.metric("Products", total_products)
 
 # Charts
 col4, col5 = st.columns(2)
 
 with col4:
-    fig1 = px.bar(df, x="Customer", y="Sales", color="Region", title="Sales by Customer")
+    fig1 = px.bar(df, x="Product", y="Amount", color="Category", title="Sales by Product")
     st.plotly_chart(fig1, use_container_width=True)
 
 with col5:
-    fig2 = px.pie(df, names="Region", values="Sales", title="Sales by Region")
+    fig2 = px.pie(df, names="Category", values="Amount", title="Sales by Category")
     st.plotly_chart(fig2, use_container_width=True)
 
 # Data Table
